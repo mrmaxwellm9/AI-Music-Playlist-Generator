@@ -1,0 +1,30 @@
+<!-- api_key_entry.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>API Key Entry</title>
+  </head>
+  <body>
+    <h1>Enter your API keys</h1>
+    {% if error %}
+    <p>{{ error }}</p>
+    {% endif %}
+    <form method="POST" action="{% url 'api_key_entry' %}">
+      {% csrf_token %}
+      <input
+        type="text"
+        name="openai_api_key"
+        placeholder="Enter your OpenAI API key"
+        required
+      />
+      <input
+        type="text"
+        name="youtube_api_key"
+        placeholder="Enter your YouTube Data API key"
+        required
+      />
+      <!-- Add more fields as necessary for other API keys -->
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
