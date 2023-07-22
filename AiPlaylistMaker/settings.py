@@ -23,13 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-
 try:
     with open('etc/secret_key.txt') as f:
         SECRET_KEY = f.read().strip()
-except:
+        f.close()
+except FileNotFoundError:
     print("Failed to open with file, attempting environment variable")
-else:
     SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -54,7 +53,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    'AiPlaylistMaker',
+
 ]
 
 MIDDLEWARE = [
