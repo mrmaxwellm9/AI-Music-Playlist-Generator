@@ -1,0 +1,1 @@
+web gunicorn aiplaylistmaker.wsgi:application --log-file -
