@@ -1,12 +1,12 @@
 # AI-Music-Playlist-Generator
 
-## Setup
+# Setup
 
-### Dependencies
+## Dependencies
 
 The dependencies for the project can be found in the [requirements.txt](https://github.com/mrmaxwellm9/AI-Music-Playlist-Generator/blob/master/requirements.txt) file and can be installed using pip install -r requirements.txt
 
-### Keys
+## Keys
 
 #### Django
 
