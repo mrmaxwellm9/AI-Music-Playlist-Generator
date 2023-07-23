@@ -42,6 +42,7 @@ At the top of the [views.py](https://github.com/mrmaxwellm9/AI-Music-Playlist-Ge
 **YT_SEARCH_RESULT_AMOUNT**: Set to the number of videos you wish for YouTube to search when looking for a video.
 **DM_SEARCH_RESULT_AMOUNT**: Set to the number of videos you wish for Dailymotion to search when looking for a prompt.
 **MINIMUM_VIDEO_RETURN**: Set the minimum amount of videos you want in your playlist.
+
 **ALLOW_DM_VIDEOS**: Set to True if you want Dailymotion videos in the playlist and False if not.
 
 YT_SEARCH_RESULT_AMOUNT, DM_SEARCH_RESULT_AMOUNT, and MINIMUM_VIDEO_RETURN should never be below 1, even if ALLOW_DM_VIDEOS is False.
