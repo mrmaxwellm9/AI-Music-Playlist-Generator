@@ -48,3 +48,11 @@ YT_SEARCH_RESULT_AMOUNT, DM_SEARCH_RESULT_AMOUNT, and MINIMUM_VIDEO_RETURN shoul
 For better results but long run time and high API usage set ALLOW_DM_VIDEOS to False and set YT_SEARCH_RESULT_AMOUNT to some number <=3 with the lower the number the better results/higher runtime and API calls.
 
 ### Inner Workings
+
+Most of the relevant code can be found in the [views.py](https://github.com/mrmaxwellm9/AI-Music-Playlist-Generator/blob/master/chat/views.py) file and [templates](https://github.com/mrmaxwellm9/AI-Music-Playlist-Generator/tree/master/chat/templates) folder. Where the chat_view and create_playlist functions in the views.py file do most of the work. 
+
+#### Backend
+
+A basic description of how the app backend works is that after verifying the API keys and receiving user input for the playlist, it creates a ChatGPT instance and instructs it to only respond with music playlists with 10 songs. Then, the user message is given to the AI, and the playlist response is parsed for the song titles and sent to create_playlist. Create_playlist searches for available videos to embed by first searching YouTube and then if none are found, it searches Dailymotion (If allowed by the settings). Then, a list of the song urls it could find is returned. If the url list isn't at least **MINIMUM_VIDEO_RETURN** large, the AI is asked for 10 more unique songs, parses, the songs, and appends the available new song urls to the existing song urls. This loop continues until the url list is at least **MINIMUM_VIDEO_RETURN** large. Once large enough the video urls and titles are rendered into the chat.html page.
+
+
