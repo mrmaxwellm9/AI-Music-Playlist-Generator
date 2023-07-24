@@ -49,7 +49,7 @@ YT_SEARCH_RESULT_AMOUNT, DM_SEARCH_RESULT_AMOUNT, and MINIMUM_VIDEO_RETURN shoul
 For better results but long run time and high API usage set ALLOW_DM_VIDEOS to False and set YT_SEARCH_RESULT_AMOUNT to some number <=3 with the lower the number the better results/higher runtime and API calls.
 
 The following shows the results of the same "Rock and Roll" query but has **YT_SEARCH_RESULT_AMOUNT** set to 2, **DM_SEARCH_RESULT_AMOUNT** set to 1, **MINIMUM_VIDEO_RETURN** set to 5, and **ALLOW_DM_VIDEOS** set to false.
-![AI_Better_filtering](https://github.com/mrmaxwellm9/AI-Music-Playlist-Generator/assets/130167736/27a4a6d8-0b52-4e8d-ae4b-495a6f340b95)
+![Better_Search](https://github.com/mrmaxwellm9/AI-Music-Playlist-Generator/assets/130167736/4524cd7e-5a72-4f1f-a947-ceb4e9f5cd05)
 
 ### Inner Workings
 
