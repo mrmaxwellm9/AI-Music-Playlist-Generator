@@ -20,15 +20,16 @@ When you launch the server and route to the site, you will be asked to enter an 
 
 ## Usage
 
-To run the server type "python manage.py runserver" in the same directory as the manage.py file. This should start the server and give you a url the server is running on. Open a web browser and direct to that url. ![alt text](https://raw.githubusercontent.com/mrmaxwellm9/images/main/AI_Enter_Keys.png?token=GHSAT0AAAAAACEFFZBTTJMTY7ZWY54RYF5EZF5NV3A "Enter_API_Keys_Screen") 
+To run the server type "python manage.py runserver" in the same directory as the manage.py file. This should start the server and give you a url the server is running on. Open a web browser and direct to that url.
+![AI_Enter_Keys](https://github.com/mrmaxwellm9/AI-Music-Playlist-Generator/assets/130167736/55d76d3d-fd2e-428d-bc0a-cc1300a1ea4d)
 A screen that looks like the above image should display and after entering the valid API keys and clicking submit you should be redirected to the ChatGPT chat screen that looks like the image below
-![alt text](https://raw.githubusercontent.com/mrmaxwellm9/images/main/AI_Type_A_Message.png?token=GHSAT0AAAAAACEFFZBTPNL5JZQS4DUWNVN6ZF5NV4Q "GPT_Chat_Screen") 
+![AI_Type_A_Message](https://github.com/mrmaxwellm9/AI-Music-Playlist-Generator/assets/130167736/fa3990cf-4483-4291-a2c9-6474bc749b88)
 Where it says "Type your message..." enter a message for the AI to read and interpret into a playlist of music. 
 
 ###  Playlist Interface
 
-When entering the prompt "Rock and Roll" the following screen is provided. 
-![alt text](https://raw.githubusercontent.com/mrmaxwellm9/images/main/AI_Video_Display.png?token=GHSAT0AAAAAACEFFZBTLAZ3YOR44CSUHNEEZF5NWGA "Rock_And_Roll_Playlist")
+When entering the prompt "Rock and Roll" the following screen is provided with the default search settings. 
+![AI_Video_Display](https://github.com/mrmaxwellm9/AI-Music-Playlist-Generator/assets/130167736/d4d0deb6-96d8-45a4-9408-1052e3c917e9)
 To play a specific video you can click the desired video from the list of videos on the left. To play the video use the video's native player controls. To control the volume, YouTube offers an adequate volume bar in its native player, but if a Dailymotion video plays a custom volume bar will be added to the player controls below the video player.
 
 Other player control options include shuffle, autoplay, previous, and next. The next button plays the next video in the playlist, or a random video if shuffle is toggled on. The previous button always plays the previously played video regardless of shuffle. Autoplay makes it so that upon video completion the next button is automatically pressed.
@@ -46,6 +47,9 @@ At the top of the [views.py](https://github.com/mrmaxwellm9/AI-Music-Playlist-Ge
 
 YT_SEARCH_RESULT_AMOUNT, DM_SEARCH_RESULT_AMOUNT, and MINIMUM_VIDEO_RETURN should never be below 1, even if ALLOW_DM_VIDEOS is False.
 For better results but long run time and high API usage set ALLOW_DM_VIDEOS to False and set YT_SEARCH_RESULT_AMOUNT to some number <=3 with the lower the number the better results/higher runtime and API calls.
+
+The following shows the results of the same "Rock and Roll" query but has **YT_SEARCH_RESULT_AMOUNT** set to 2, **DM_SEARCH_RESULT_AMOUNT** set to 1, **MINIMUM_VIDEO_RETURN** set to 5, and **ALLOW_DM_VIDEOS** set to false.
+![AI_Better_filtering](https://github.com/mrmaxwellm9/AI-Music-Playlist-Generator/assets/130167736/27a4a6d8-0b52-4e8d-ae4b-495a6f340b95)
 
 ### Inner Workings
 
