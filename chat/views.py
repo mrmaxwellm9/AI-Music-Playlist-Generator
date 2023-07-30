@@ -7,10 +7,10 @@ from pytube import YouTube
 import dailymotion
 import requests
 
-YT_SEARCH_RESULT_AMOUNT = 3
+YT_SEARCH_RESULT_AMOUNT = 2
 DM_SEARCH_RESULT_AMOUNT = 1
 MINIMUM_VIDEO_RETURN = 5
-ALLOW_DM_VIDEOS = True
+ALLOW_DM_VIDEOS = False
 
 
 def parse_song_list(response):
@@ -137,7 +137,7 @@ def chat_view(request):
         while len(urls) < MINIMUM_VIDEO_RETURN:
             print(len(urls))
             chat_log.append(
-                {"role": "user", "content": "Give me 10 more similar unique songs."})
+                {"role": "user", "content": "Give me 10 more similar unique songs, no repeats."})
             completion = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
                 messages=chat_log
@@ -146,6 +146,7 @@ def chat_view(request):
             chat_log.append({"role": "assistant", "content": response})
             new_songs = parse_song_list(response)
             urls = urls + create_playlist(youtube, d, new_songs)
+            urls = [*set(urls)]
 
         # Create a playlist on YouTube
 
